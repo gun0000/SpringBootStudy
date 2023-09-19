@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello.core.xml.XmlAppContext" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-19T14:37:24" hostname="DESKTOP-VSABUUE" time="0.529">
+  <properties/>
+  <testcase name="xmlAppContext()" classname="hello.core.xml.XmlAppContext" time="0.529"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
