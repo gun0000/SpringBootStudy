@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
 - Bean을 등록할 때 싱글톤(singleton)이 되도록 보장해준다.
 
 - 스프링 컨테이너에서 Bean을 관리할 수 있게 됨.
+크게 고민할 것이 없다. 스프링 설정 정보는 항상 @Configuration 을 사용하자
 */
 @Configuration
 public class AppConfig {
