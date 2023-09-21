@@ -13,8 +13,7 @@ import static org.springframework.context.annotation.ComponentScan.Filter;
 public class ComponentFilterAppConfigTest {
     @Test
     void filterScan() {
-        ApplicationContext ac = new
-                AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
         BeanA beanA = ac.getBean("beanA", BeanA.class);
         assertThat(beanA).isNotNull();
         Assertions.assertThrows(
