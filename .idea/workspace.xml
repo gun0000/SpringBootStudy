@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="프로젝트 환경설정">
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Delivery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/DeliveryStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/item/Album.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/item/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/item/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/item/Movie.java" afterDir="false" />
+    <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="엔티티 클래스 1">
+      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/Member.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Delivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/domain/item/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +120,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MemberRepositoryTest">
+  <component name="RunManager" selected="Spring Boot.JpashopApplication">
     <configuration name="MemberRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -232,7 +225,8 @@
       <workItem from="1695391362657" duration="280000" />
       <workItem from="1695391656258" duration="2533000" />
       <workItem from="1695394208656" duration="1690000" />
-      <workItem from="1695435992630" duration="4116000" />
+      <workItem from="1695435992630" duration="4223000" />
+      <workItem from="1695448402796" duration="5957000" />
     </task>
     <task id="LOCAL-00001" summary="git연동 커밋">
       <created>1695386105541</created>
@@ -249,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695395739054</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="엔티티 클래스 1">
+      <option name="closed" value="true" />
+      <created>1695441502479</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695441502479</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +271,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="git연동 커밋" />
     <MESSAGE value="프로젝트 환경설정" />
-    <option name="LAST_COMMIT_MESSAGE" value="프로젝트 환경설정" />
+    <MESSAGE value="엔티티 클래스 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="엔티티 클래스 1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
