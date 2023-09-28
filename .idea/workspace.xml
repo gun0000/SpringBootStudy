@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="변경 감지와 병합(merge)">
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/web/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/resources/templates/order/orderForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/resources/templates/order/orderList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex1hellojpa/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex1hellojpa/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex1hellojpa/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex1hellojpa/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex1hellojpa/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/springboottest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/springboottest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/service/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +81,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -105,7 +110,9 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/user/Desktop/SpringBootTest/jpashop/src/main/resources/static",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "C:/Users/tngus/IdeaProjects/SpringBootStudy/ex1hellojpa",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -143,7 +150,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OrderServiceTest">
+  <component name="RunManager" selected="Maven.이름이 지정되지 않았습니다">
     <configuration name="MemberRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -216,7 +223,7 @@
       </method>
     </configuration>
     <configuration name="OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="jpashop.test" />
+      <module name="springboottest" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="jpabook.jpashop.service.*" />
@@ -225,10 +232,38 @@
       </extension>
       <option name="PACKAGE_NAME" value="jpabook.jpashop.service" />
       <option name="MAIN_CLASS_NAME" value="jpabook.jpashop.service.OrderServiceTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="이름이 지정되지 않았습니다" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/ex1hellojpa" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
     <configuration name="CoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="core.main" />
@@ -252,6 +287,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.MemberRepositoryTest" />
+      <item itemvalue="JUnit.MemberRepositoryTest" />
+      <item itemvalue="JUnit.MemberServiceTest.중복_회원_예외" />
+      <item itemvalue="JUnit.MemberServiceTest.회원가입" />
+      <item itemvalue="JUnit.OrderServiceTest" />
+      <item itemvalue="Maven.이름이 지정되지 않았습니다" />
+      <item itemvalue="Spring Boot.CoreApplication" />
+      <item itemvalue="Spring Boot.HelloSpringApplication" />
+      <item itemvalue="Spring Boot.JpashopApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.OrderServiceTest" />
@@ -278,6 +324,8 @@
       <workItem from="1695535794631" duration="12301000" />
       <workItem from="1695616596025" duration="6080000" />
       <workItem from="1695699663737" duration="7614000" />
+      <workItem from="1695806001180" duration="1202000" />
+      <workItem from="1695825441972" duration="1700000" />
     </task>
     <task id="LOCAL-00001" summary="git연동 커밋">
       <created>1695386105541</created>
