@@ -11,12 +11,16 @@ public class JpaMain {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
         EntityManager em = emf.createEntityManager();
         EntityTransaction transaction = em.getTransaction();
-//엔티티 매니저는 데이터 변경시 트랜잭션을 시작해야 한다.
-        transaction.begin(); // [트랜잭션] 시작
-        em.persist(memberA);
-        em.persist(memberB);
-//여기까지 INSERT SQL을 데이터베이스에 보내지 않는다.
-//커밋하는 순간 데이터베이스에 INSERT SQL을 보낸다.
+        //팀 저장
+        Team team = new Team();
+        team.setName("TeamA");
+        em.persist(team);
+        //회원 저장
+        Member member = new Member();
+        member.setName("member1");
+        member.setTeam(team); //단방향 연관관계 설정, 참조 저장
+        em.persist(member);
+
         transaction.commit(); // [트랜잭션] 커밋
     }
 
