@@ -3,14 +3,15 @@ import javax.persistence.*;
 
 @Entity
 public class Member {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
+    @Column(name = "MEMBER_ID")
     private Long id;
+
     @Column(name = "USERNAME")
-    private String name;
-    private int age;
-    // @Column(name = "TEAM_ID")
-// private Long teamId;
-    @ManyToOne
+    private String username;
+
+    @ManyToOne(fetch = FetchType.EAGER) //(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
@@ -22,20 +23,12 @@ public class Member {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Team getTeam() {
@@ -46,7 +39,7 @@ public class Member {
         this.team = team;
     }
 
-    /*
+/*
         * 데이터베이스 스키마 자동 생성 - 속성
     hibernate.hbm2ddl.auto
     옵션 설명
