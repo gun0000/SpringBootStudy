@@ -15,6 +15,13 @@ public class Member {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
+    // 주소
+    //private String city;
+    //private String street;
+    //private String zipcode;
+    @Embedded
+    private Address homeAddress;
+
     public Long getId() {
         return id;
     }
@@ -37,6 +44,13 @@ public class Member {
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+    public Address getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(Address homeAddress) {
+        this.homeAddress = homeAddress;
     }
 
 /*
