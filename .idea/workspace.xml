@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="상품 주문">
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/InitDb.java" afterDir="false" />
+    <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="조회용 샘플 데이터 입력">
+      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/api/OrderSimpleApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashop/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/JpashopApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/JpashopApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/repository/OrderRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +278,8 @@
       <workItem from="1695535794631" duration="12301000" />
       <workItem from="1695616596025" duration="6080000" />
       <workItem from="1695699663737" duration="7614000" />
-      <workItem from="1696588212834" duration="1270000" />
+      <workItem from="1696588212834" duration="2450000" />
+      <workItem from="1696590814797" duration="514000" />
     </task>
     <task id="LOCAL-00001" summary="git연동 커밋">
       <created>1695386105541</created>
@@ -332,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695724248629</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="조회용 샘플 데이터 입력">
+      <option name="closed" value="true" />
+      <created>1696589616995</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696589616995</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +369,8 @@
     <MESSAGE value="회원 도메인 개발" />
     <MESSAGE value="웹 계층 개발 ,부트스트랩" />
     <MESSAGE value="변경 감지와 병합(merge)" />
-    <option name="LAST_COMMIT_MESSAGE" value="변경 감지와 병합(merge)" />
+    <MESSAGE value="조회용 샘플 데이터 입력" />
+    <option name="LAST_COMMIT_MESSAGE" value="조회용 샘플 데이터 입력" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
