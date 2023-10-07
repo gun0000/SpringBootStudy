@@ -27,6 +27,19 @@ public class OrderRepository {
         //... 검색 로직
         return null;
     }
+
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery(
+                        "select o from Order o" +
+                                " join fetch o.member m" +
+                                " join fetch o.delivery d", Order.class)
+                .getResultList();
+    }
+/*
+    엔티티를 페치 조인(fetch join)을 사용해서 쿼리 1번에 조회
+    페치 조인으로 order -> member , order -> delivery 는 이미 조회 된 상태 이므로 지연로딩X
+*/
+
     public List<Order> findAllByString(OrderSearch orderSearch) {
 
         String jpql = "select o from Order o join o.member m";
