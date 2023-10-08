@@ -27,7 +27,17 @@ public class OrderRepository {
         //... 검색 로직
         return null;
     }
-
+//v3.1
+    public List<Order> findAllWithMemberDelivery(int offset, int limit) {
+        return em.createQuery(
+                        "select o from Order o" +
+                                " join fetch o.member m" +
+                                " join fetch o.delivery d", Order.class)
+                .setFirstResult(offset)
+                .setMaxResults(limit)
+                .getResultList();
+    }
+//v3
     //distinct 중복제거
     public List<Order> findAllWithItem() {
         return em.createQuery(

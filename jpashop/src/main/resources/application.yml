@@ -15,6 +15,10 @@ spring: #띄어쓰기 없음
       hibernate: #띄어쓰기 6칸
         # show_sql: true #띄어쓰기 8칸
         format_sql: true #띄어쓰기 8칸
+        default_batch_fetch_size: 1000
+        #개별로 설정하려면 @BatchSize 를 적용하면 된다. (컬렉션은 컬렉션 필드에, 엔티티는 엔티티 클래스에 적용)
+
 logging.level: #띄어쓰기 없음
   org.hibernate.SQL: debug #띄어쓰기 2칸
   org.hibernate.orm.jdbc.bind: trace #띄어쓰기 2칸
+
