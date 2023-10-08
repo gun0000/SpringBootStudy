@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="주문 조회 V3.1:엔티티를DTO로변환 페이징과&#10;한계 돌파&#10;ToOne 관계는 페치조인&#10;나머지는 hibernate.default_batch_fetch_size 로 최적화 하자.(는 SQL IN 절을 사용)">
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/repository/order/query/OrderItemQueryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/repository/order/query/OrderQueryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/repository/order/query/OrderQueryRepository.java" afterDir="false" />
+    <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="주문 조회 V4:JPA에서DTO직접조회">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/api/OrderApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/api/OrderApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/repository/order/query/OrderQueryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/repository/order/query/OrderQueryRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +279,7 @@
       <workItem from="1696588212834" duration="2450000" />
       <workItem from="1696590814797" duration="2684000" />
       <workItem from="1696652107106" duration="7608000" />
-      <workItem from="1696737086932" duration="10295000" />
+      <workItem from="1696737086932" duration="10707000" />
     </task>
     <task id="LOCAL-00001" summary="git연동 커밋">
       <created>1695386105541</created>
@@ -410,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696750305651</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="주문 조회 V4:JPA에서DTO직접조회">
+      <option name="closed" value="true" />
+      <created>1696778703123</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696778703123</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +451,8 @@
     <MESSAGE value="주문 조회 V2:엔티티를DTO로변환&#10;-페이징 불가능&#10;-컬렉션 둘 이상에 페치 조인을 사용하면 안된다. 데이터가&#10; 부정합하게 조회될 수 있다." />
     <MESSAGE value="주문 조회 V3:엔티티를DTO로변환 페치조인&#10;최적화&#10;-페이징 불가능&#10;-컬렉션 둘 이상에 페치 조인을 사용하면 안된다. 데이터가&#10; 부정합하게 조회될 수 있다." />
     <MESSAGE value="주문 조회 V3.1:엔티티를DTO로변환 페이징과&#10;한계 돌파&#10;ToOne 관계는 페치조인&#10;나머지는 hibernate.default_batch_fetch_size 로 최적화 하자.(는 SQL IN 절을 사용)" />
-    <option name="LAST_COMMIT_MESSAGE" value="주문 조회 V3.1:엔티티를DTO로변환 페이징과&#10;한계 돌파&#10;ToOne 관계는 페치조인&#10;나머지는 hibernate.default_batch_fetch_size 로 최적화 하자.(는 SQL IN 절을 사용)" />
+    <MESSAGE value="주문 조회 V4:JPA에서DTO직접조회" />
+    <option name="LAST_COMMIT_MESSAGE" value="주문 조회 V4:JPA에서DTO직접조회" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

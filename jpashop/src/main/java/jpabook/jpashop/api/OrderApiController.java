@@ -163,6 +163,21 @@ DB에서 읽어오고, 메모리에서 페이징 해버린다(매우 위험하�
     는 최적화 하기 어려우므로 findOrderItems() 같은 별도의 메서드로 조회한다.
 */
 
+    /**
+     V5: JPA에서 DTO 직접 조회 - 컬렉션 조회 최적화
+     **/
+    @GetMapping("/api/v5/orders")
+    public List<OrderQueryDto> ordersV5() {
+        return orderQueryRepository.findAllByDto_optimization();
+    }
+/*
+    Query: 루트 1번, 컬렉션 1번
+    ToOne 관계들을 먼저 조회하고, 여기서 얻은 식별자 orderId로 ToMany 관계인 OrderItem 을 한꺼번
+    에 조회
+    MAP을 사용해서 매칭 성능 향상(O(1))
+*/
+
+
 
     @Data
     static class OrderDto {
