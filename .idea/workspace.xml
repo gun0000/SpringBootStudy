@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="간단한 주문 조회 V4:JPA에서DTO로바로조회&#10;-V1~V4 정리">
-      <change afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/api/OrderApiController.java" afterDir="false" />
+    <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="주문 조회 V1:엔티티 직접 노출&#10;-좋은 방법은 아니다">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/api/OrderApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/api/OrderApiController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +278,7 @@
       <workItem from="1696588212834" duration="2450000" />
       <workItem from="1696590814797" duration="2684000" />
       <workItem from="1696652107106" duration="7608000" />
-      <workItem from="1696737086932" duration="1172000" />
+      <workItem from="1696737086932" duration="2406000" />
     </task>
     <task id="LOCAL-00001" summary="git연동 커밋">
       <created>1695386105541</created>
@@ -375,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696663633898</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="주문 조회 V1:엔티티 직접 노출&#10;-좋은 방법은 아니다">
+      <option name="closed" value="true" />
+      <created>1696742035805</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696742035805</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +413,8 @@
     <MESSAGE value="간단한 주문 조회 V2:엔티티를DTO로변환&#10;!성능이슈" />
     <MESSAGE value="간단한 주문 조회 V3:엔티티를DTO로변환&#10;-페치 조인 최적화" />
     <MESSAGE value="간단한 주문 조회 V4:JPA에서DTO로바로조회&#10;-V1~V4 정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="간단한 주문 조회 V4:JPA에서DTO로바로조회&#10;-V1~V4 정리" />
+    <MESSAGE value="주문 조회 V1:엔티티 직접 노출&#10;-좋은 방법은 아니다" />
+    <option name="LAST_COMMIT_MESSAGE" value="주문 조회 V1:엔티티 직접 노출&#10;-좋은 방법은 아니다" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
