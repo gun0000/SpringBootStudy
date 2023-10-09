@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="주문 조회 V6:JPA에서 DTO로 직접 조회, 플랫 데이터 최적화">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/api/OrderApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jpashop/src/main/java/jpabook/jpashop/api/OrderApiController.java" afterDir="false" />
-    </list>
+    <list default="true" id="9c5ca6de-9bb7-4461-a3f9-9d81b34f2bf0" name="변경" comment="권장 순서" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -278,7 +275,7 @@
       <workItem from="1696588212834" duration="2450000" />
       <workItem from="1696590814797" duration="2684000" />
       <workItem from="1696652107106" duration="7608000" />
-      <workItem from="1696737086932" duration="13520000" />
+      <workItem from="1696737086932" duration="13637000" />
     </task>
     <task id="LOCAL-00001" summary="git연동 커밋">
       <created>1695386105541</created>
@@ -431,7 +428,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696780820813</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="권장 순서">
+      <option name="closed" value="true" />
+      <created>1696782036630</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1696782036630</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +474,8 @@
     <MESSAGE value="주문 조회 V4:JPA에서DTO직접조회" />
     <MESSAGE value="주문 조회 V5:JPA에서DTO직접조회- 컬렉션 조회 최적화" />
     <MESSAGE value="주문 조회 V6:JPA에서 DTO로 직접 조회, 플랫 데이터 최적화" />
-    <option name="LAST_COMMIT_MESSAGE" value="주문 조회 V6:JPA에서 DTO로 직접 조회, 플랫 데이터 최적화" />
+    <MESSAGE value="권장 순서" />
+    <option name="LAST_COMMIT_MESSAGE" value="권장 순서" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
