@@ -18,9 +18,8 @@ public class MemberJpaRepositoryTest {
     MemberJpaRepository memberJpaRepository;
     @Test
     public void testMember() {
-        Member member = new Member();
-        // Member member = new Member("memberA"); setter방식보다 생성자방식이 더 나은 ㅠ방법
-        member.setUsername("memberA");
+        Member member = new Member("memberA");
+        // Member member = new Member("memberA"); setter방식보다 생성자방식이 더 나은 방법
         Member savedMember = memberJpaRepository.save(member);
         Member findMember = memberJpaRepository.find(savedMember.getId());
         assertThat(findMember.getId()).isEqualTo(member.getId());
