@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -56,6 +57,27 @@ public interface MemberRepository extends JpaRepository<Member,Long> {
     @Modifying(clearAutomatically = true)//벌크성 쿼리를 실행하고 나서 영속성 컨텍스트 초기화
     @Query("update Member m set m.age = m.age + 1 where m.age >= :age")
     int bulkAgePlus(@Param("age") int age);
+
+
+    //JPQL 페치 조인 되도록 그냥 이걸쓰자
+    @Query("select m from Member m left join fetch m.team")
+    List<Member> findMemberFetchJoin();
+
+    //공통 메서드 오버라이드
+    @Override
+    @EntityGraph(attributePaths = {"team"})
+    List<Member> findAll();
+    //JPQL + 엔티티 그래프
+    @EntityGraph(attributePaths = {"team"})
+    @Query("select m from Member m")
+    List<Member> findMemberEntityGraph();
+    //메서드 이름으로 쿼리에서 특히 편리하다.
+    //@EntityGraph(attributePaths = {"team"})
+    //List<Member> findByUsername(String username);
+
+    //EntityGraph 정리
+    //사실상 페치 조인(FETCH JOIN)의 간편 버전
+    //LEFT OUTER JOIN 사용
 
 
 
