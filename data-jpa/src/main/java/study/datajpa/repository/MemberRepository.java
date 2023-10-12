@@ -1,13 +1,12 @@
 package study.datajpa.repository;
 
+import jakarta.persistence.LockModeType;
+import jakarta.persistence.QueryHint;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.EntityGraph;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.*;
 import org.springframework.data.repository.query.Param;
 import study.datajpa.entity.Member;
 
@@ -79,6 +78,33 @@ public interface MemberRepository extends JpaRepository<Member,Long> {
     //사실상 페치 조인(FETCH JOIN)의 간편 버전
     //LEFT OUTER JOIN 사용
 
+
+    //JPA 쿼리 힌트(SQL 힌트가 아니라 JPA 구현체에게 제공하는 힌트)
+    //조회만 사용하기(Read Only)
+    @QueryHints(value = @QueryHint(name = "org.hibernate.readOnly", value = "true"))
+    Member findReadOnlyByUsername(String username);
+
+    //Look
+    @Lock(LockModeType.PESSIMISTIC_WRITE) //비관적 락
+    List<Member> findLockByUsername(String name);
+    /*
+    A라는 사람이 게시 글 조회수에 접근하고 있는 상황(Update까지 끝내기 전)에서는 B라는 사람이 게시 글 조회수에 접근하지 못하도록 막는 것이다.
+    A라는 사람이 조회수에 접근할 때, 문을 걸어잠갔다고하여 "락"이라고 표현한다.
+
+    낙관적 락(Optimistic Lock)이란?
+        데이터 갱신 시, 총돌이 발생하지 않을 것이라는 가정을 두고 진행하는 락 기법이다.
+        걸어잠그어 접근을 못하게 하기 보다는 충돌을 방지하기 위한 방법이다.
+
+        낙관적 락 문제
+            낙관적 락과 같은 경우는 1000개의 요청이 존재한다면, 가장 처음의 1개는 적용되고 나머지 999개는 버전 변경이 맞지않아서 롤백된다. 그만큼 자원 소모가 발생한다.
+            모든 작업이 수행되고, commit 하는 시점에 충돌 여부를 알 수 있기 때문에 느리게 될 경우가 존재한다.
+
+    비관적 락(Pessimistic Lock)이란?
+        데이터 갱신 시, 충돌이 발생할 것이라는 가정을 두고 진행하는 락 기법이다.
+
+        비관적 락 문제
+            레코드 자체에 락을 걸기 때문에 줄을 서야한다. 그만큼 병목현상이 생길 수 있다.
+    */
 
 
 }
