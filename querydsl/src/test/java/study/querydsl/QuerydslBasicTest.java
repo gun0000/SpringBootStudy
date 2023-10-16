@@ -1,5 +1,6 @@
 package study.querydsl;
 
+import com.querydsl.core.QueryResults;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -114,6 +115,68 @@ public class QuerydslBasicTest {
     member.username.startsWith("member") //like ‘member%’ 검색
 ...
      */
+
+    //결과 조회
+    @Test
+    public void resultFetchTest(){
+
+        //List
+        List<Member> fetch = queryFactory
+                .selectFrom(member)
+                .fetch();
+
+        /*
+            fetch() : 리스트 조회, 데이터 없으면 빈 리스트 반환
+
+            select member1 from Member member1
+            [Member(id=1, username=member1, age=10),
+            Member(id=2, username=member2, age=20),
+            Member(id=3, username=member3, age=30),
+            Member(id=4, username=member4, age=40)]
+         */
+
+        //단건
+//        Member findMember1 = queryFactory
+//                .selectFrom(member)
+//                .fetchOne();
+        //fetchOne() : 단 건 조회
+        //결과가 없으면 : null
+        //결과가 둘 이상이면 : com.querydsl.core.NonUniqueResultException
+
+        //처음 한 건 조회 fetchFirst() : limit(1).fetchOne()
+        Member findMember2 = queryFactory
+                .selectFrom(member)
+                .fetchFirst();
+        /*
+            Member(id=1, username=member1, age=10)
+        */
+
+        //페이징에서 사용 fetchResults() : 페이징 정보 포함, total count 쿼리 추가 실행
+        QueryResults<Member> results = queryFactory
+                .selectFrom(member)
+                .fetchResults();
+        /*
+            results
+                com.querydsl.core.QueryResults@62d4dac42023
+            results.getResults()
+                [Member(id=1, username=member1, age=10),
+                 Member(id=2, username=member2, age=20),
+                 Member(id=3, username=member3, age=30),
+                 Member(id=4, username=member4, age=40)]
+            results.getTotal()
+                 4개
+        */
+
+        //count 쿼리로 변경 fetchCount() : count 쿼리로 변경해서 count 수 조회
+        long count = queryFactory
+                .selectFrom(member)
+                .fetchCount();
+        /*
+            count = 4 개
+        */
+
+
+    }
 
 
 }
