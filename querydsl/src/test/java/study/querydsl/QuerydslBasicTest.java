@@ -1,6 +1,7 @@
 package study.querydsl;
 
 import com.querydsl.core.QueryResults;
+import com.querydsl.core.Tuple;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -16,6 +17,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static study.querydsl.entity.QMember.*; //QMember qMember = QMember.member; //기본 인스턴스 사용
+import static study.querydsl.entity.QTeam.team;
 
 @SpringBootTest
 @Transactional
@@ -254,5 +256,83 @@ public class QuerydslBasicTest {
         조인을 해버리기 때문에 성능이 안나올 수 있다. count 쿼리에 조인이 필요없는 성능 최적화가 필요하다면,
         count 전용 쿼리를 별도로 작성해야 한다.
      */
+
+
+    //집합 함수
+
+    /**
+     * JPQL
+     * select
+     * COUNT(m), //회원수
+     * SUM(m.age), //나이 합
+     * AVG(m.age), //평균 나이
+     * MAX(m.age), //최대 나이
+     * MIN(m.age) //최소 나이
+     * from Member m
+     */
+
+    @Test
+    public void aggregation() throws Exception{
+        List<Tuple> result = queryFactory
+                .select(member.count(),
+                        member.age.sum(),
+                        member.age.avg(),
+                        member.age.max(),
+                        member.age.min())
+                .from(member)
+                .fetch();
+
+        Tuple tuple = result.get(0);
+        assertThat(tuple.get(member.count())).isEqualTo(4);
+        assertThat(tuple.get(member.age.sum())).isEqualTo(100);
+        assertThat(tuple.get(member.age.avg())).isEqualTo(25);
+        assertThat(tuple.get(member.age.max())).isEqualTo(40);
+        assertThat(tuple.get(member.age.min())).isEqualTo(10);
+        /*
+            result  [[4, 100, 25.0, 40, 10]]
+            result.get(0) [4, 100, 25.0, 40, 10]
+            count  4
+            sum 100
+            avg 25
+            max 40
+            min 10
+            JPQL이 제공하는 모든 집합 함수를 제공한다.
+            tuple은 프로젝션과 결과반환에서 설명한다.
+            데이터 타입이 여러개 들어올때
+            멤버 단일 타입을 조회하는 게 아니라
+            그럴 때는 Tuple을 쓴다
+            실무에서는 Tuple을 많이 쓰진 않고 DTO로 직접 뽑아온다
+         */
+    }
+    /**
+     * 팀의 이름과 각 팀의 평균 연령을 구해라.
+     */
+    @Test
+    public void group() throws Exception {
+        List<Tuple> result = queryFactory
+                .select(team.name, member.age.avg())
+                .from(member)
+                .join(member.team, team)
+                .groupBy(team.name)
+                .fetch();
+        Tuple teamA = result.get(0);
+        Tuple teamB = result.get(1);
+        assertThat(teamA.get(team.name)).isEqualTo("teamA");
+        assertThat(teamA.get(member.age.avg())).isEqualTo(15);
+        assertThat(teamB.get(team.name)).isEqualTo("teamB");
+        assertThat(teamB.get(member.age.avg())).isEqualTo(35);
+    }
+    /*
+    result          [[teamA, 15.0], [teamB, 35.0]]
+    result.get(0)   [teamA, 15.0]
+    result.get(1)   [teamB, 35.0]
+    groupBy , 그룹화된 결과를 제한하려면 having
+
+    groupBy(), having() 예시
+    .groupBy(item.price)
+    .having(item.price.gt(1000)
+     */
+
+
 
 }
