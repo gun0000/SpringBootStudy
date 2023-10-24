@@ -2,6 +2,8 @@ package study.querydsl;
 
 import com.querydsl.core.QueryResults;
 import com.querydsl.core.Tuple;
+import com.querydsl.core.types.dsl.CaseBuilder;
+import com.querydsl.core.types.dsl.NumberExpression;
 import com.querydsl.jpa.JPAExpressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
@@ -629,5 +631,61 @@ public class QuerydslBasicTest {
             2. 애플리케이션에서 쿼리를 2번 분리해서 실행한다.
             3. nativeSQL을 사용한다.
      */
+
+/*
+    Case 문
+    select, 조건절(where), order by에서 사용 가능
+*/
+    @Test
+    public void 단순한조건() {
+        List<String> result = queryFactory
+                .select(member.age
+                        .when(10).then("열살")
+                        .when(20).then("스무살")
+                        .otherwise("기타")
+                )
+                .from(member)
+                .fetch();
+        //[열살, 스무살, 기타, 기타]
+
+    }
+    @Test
+    public void 복잡한조건 (){
+        List<String> result = queryFactory
+                .select(new CaseBuilder()
+                        .when(member.age.between(0, 20)).then("0~20살")
+                        .when(member.age.between(21, 30)).then("21~30살")
+                        .otherwise("기타")
+                        )
+                .from(member)
+                .fetch();
+        //[0~20살, 0~20살, 21~30살, 기타]
+    }
+    /*
+        orderBy에서 Case 문 함께 사용하기 예제
+        예를 들어서 다음과 같은 임의의 순서로 회원을 출력하고 싶다면?
+        1. 0 ~ 30살이 아닌 회원을 가장 먼저 출력
+        2. 0 ~ 20살 회원 출력
+        3. 21 ~ 30살 회원 출력
+     */
+    @Test
+    public  void 복잡한조건2(){
+        NumberExpression<Integer> rankPath = new CaseBuilder()
+                .when(member.age.between(0, 20)).then(2)
+                .when(member.age.between(21, 30)).then(1)
+                .otherwise(3);
+        List<Tuple> result = queryFactory
+                .select(member.username, member.age, rankPath)
+                .from(member)
+                .orderBy(rankPath.desc())
+                .fetch();
+        for (Tuple tuple : result) {
+            String username = tuple.get(member.username);
+            Integer age = tuple.get(member.age);
+            Integer rank = tuple.get(rankPath);
+            System.out.println("username = " + username + " age = " + age + " rank = " + rank);
+        }
+       //[[member4, 40, 3], [member1, 10, 2], [member2, 20, 2], [member3, 30, 1]]
+    }
 
 }
