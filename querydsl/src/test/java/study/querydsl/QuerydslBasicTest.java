@@ -3,6 +3,7 @@ package study.querydsl;
 import com.querydsl.core.QueryResults;
 import com.querydsl.core.Tuple;
 import com.querydsl.core.types.dsl.CaseBuilder;
+import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.core.types.dsl.NumberExpression;
 import com.querydsl.jpa.JPAExpressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -687,5 +688,40 @@ public class QuerydslBasicTest {
         }
        //[[member4, 40, 3], [member1, 10, 2], [member2, 20, 2], [member3, 30, 1]]
     }
+    /*
+            상수문자더하기
+     */
+    @Test
+    public void 상수문자더하기(){
+        Tuple result = queryFactory
+                .select(member.username, Expressions.constant("A"))
+                .from(member)
+                .fetchFirst();
+        System.out.println("asdasd"+result);
+        //[member1, A]
+        /*
+           위와 같이 최적화가 가능하면 SQL에 constant 값을 넘기지 않는다. 상수를 더하는 것 처럼 최적화가
+           어려우면 SQL에 constant 값을 넘긴다.
+         */
+    }
+    @Test
+    public void 문자더하기(){
+        String result = queryFactory
+                .select(member.username.concat("_").concat(member.age.stringValue()))
+                .from(member)
+                .where(member.username.eq("member1"))
+                .fetchOne();
+        System.out.println("asdz"+result);
+        //member1_10
+        /*
+           member.age.stringValue() 부분이 중요한데, 문자가 아닌 다른 타입들은 stringValue() 로
+           문자로 변환할 수 있다. 이 방법은 ENUM을 처리할 때도 자주 사용한다.
+         */
+    }
+
+
+
+
+
 
 }
